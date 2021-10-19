@@ -56,7 +56,6 @@ userRouter.delete('/users/:uuid', logMiddleware, async (req: Request, res: Respo
   try {
     const userToDelete: string = req.params.uuid
     await deleteUser(userToDelete)
-  
     return res.status(200).json(`User ${userToDelete} -> Removed!`)
   } catch (err) {
     return res.status(404).json(`Error -> ${err}` )
