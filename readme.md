@@ -10,12 +10,7 @@
 - /users/:uuid (PUT)
 - /users/:uuid (DELETE)
 - /token (POST)
-
-## TODO
-
-1. /token/validate (POST)
-
----
+- /token/validate (POST)
 
 ## Using this project
 
