@@ -9,11 +9,11 @@
 - /users (POST)
 - /users/:uuid (PUT)
 - /users/:uuid (DELETE)
+- /token (POST)
 
 ## TODO
 
-1. /token (POST)
-2. /token/validate (POST)
+1. /token/validate (POST)
 
 ---
 
