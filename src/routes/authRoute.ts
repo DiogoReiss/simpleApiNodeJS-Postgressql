@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from 'express'
-import findUserByUsernameAndPassword from '../controllers/userRepository/findUserByUsernameAndPassword'
 import jwt from 'jsonwebtoken'
 import basicAuthMiddleware from '../middlewares/basicAuthMiddleware'
+import jwtAuthMiddleware from '../middlewares/jwtAuthMiddleware'
 
 const authRoute = Router()
 
@@ -23,6 +23,10 @@ authRoute.post('/token', basicAuthMiddleware, async (req: Request, res: Response
   } catch (err) {
     throw console.info(`Error -> ${err}`)
   }
+})
+
+authRoute.post('/token/validate', jwtAuthMiddleware, async (req: Request, res: Response, next: NextFunction) => {
+  res.sendStatus(200)
 })
 
 export default authRoute
